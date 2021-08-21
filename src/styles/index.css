@@ -1,0 +1,120 @@
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: sans-serif, arial, helvetica;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-image: url("../assets/background.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.root {
+  width: 100%;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(20, 121, 9, 0.5) 35%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  padding: 40px;
+  color: white;
+  width: 700px;
+}
+
+.content-title {
+  font-size: 28px;
+  line-height: 34px;
+  margin: 40px;
+  margin-top: 0;
+  letter-spacing: 0.5px;
+}
+
+.content-title-dots {
+  letter-spacing: 3px;
+}
+
+.subscribe,
+.description {
+  background: coral;
+  background-color: rgba(255, 127, 80, 0.7);
+  border-radius: 40px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+}
+
+.subscribe-title {
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subscribe-block {
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.subscribe-link {
+  background-color: #47bdfe;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 19px;
+  font-weight: bold;
+}
+
+.description-item {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: bold;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.description-item::after {
+  content: "Каждый день!!!";
+  position: absolute;
+  background-color: #f8ef7f;
+  color: salmon;
+  padding: 5px;
+  border-radius: 10px;
+  right: 0;
+  top: calc(100% + 18px);
+  transform: rotate(-10deg);
+  text-transform: uppercase;
+}
+
+.description-item-icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 20px;
+  position: relative;
+}
+
+.description-item-icon-inner {
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: -5px;
+}
