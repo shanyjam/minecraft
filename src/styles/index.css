@@ -8,8 +8,12 @@ html,
 body {
   font-family: sans-serif, arial, helvetica;
   width: 100%;
+  min-width: 320px;
   margin: 0;
   padding: 0;
+}
+
+body {
   background-color: black;
   background-image: url("../assets/background.jpg");
   background-position: center;
@@ -31,10 +35,9 @@ body {
 }
 
 .content {
-  width: 100%;
+  width: 650px;
   padding: 40px;
   color: white;
-  width: 700px;
 }
 
 .content-title {
@@ -43,6 +46,16 @@ body {
   margin: 40px;
   margin-top: 0;
   letter-spacing: 0.5px;
+  text-align: center;
+  color: #51ff00;
+  font-family: "Arial Black", Gadget, sans-serif;
+  text-shadow: 0px 0px 0 rgb(14, 188, 0), 1px 1px 0 rgb(-8, 166, 0),
+    2px 2px 0 rgb(-31, 143, 0), 3px 3px 0 rgb(-53, 121, 0),
+    4px 4px 0 rgb(-75, 99, 0), 5px 5px 0 rgb(-97, 77, 0),
+    6px 6px 0 rgb(-120, 54, 0), 7px 7px 0 rgb(-142, 32, 0),
+    8px 8px 0 rgb(-164, 10, 0), 9px 9px 0 rgb(-186, -12, 0),
+    10px 10px 9px rgba(0, 0, 0, 0.29), 10px 10px 1px rgba(0, 0, 0, 0.5),
+    0px 0px 9px rgba(0, 0, 0, 0.2);
 }
 
 .content-title-dots {
@@ -80,6 +93,8 @@ body {
   padding: 10px 15px;
   border-radius: 19px;
   font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 18px;
 }
 
 .description-item {
@@ -97,16 +112,24 @@ body {
   position: absolute;
   background-color: #f8ef7f;
   color: salmon;
+  border: 3px solid salmon;
   padding: 5px;
   border-radius: 10px;
   right: 0;
-  top: calc(100% + 18px);
+  top: 14px;
   transform: rotate(-10deg);
   text-transform: uppercase;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.description-item-title {
+  margin-right: 200px;
 }
 
 .description-item-icon {
   width: 40px;
+  min-width: 40px;
   height: 40px;
   margin-right: 20px;
   position: relative;
@@ -117,4 +140,59 @@ body {
   height: inherit;
   position: absolute;
   top: -5px;
+}
+
+@keyframes blinkingText {
+  0% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+}
+.description-100 {
+  font-weight: bold;
+  text-align: center;
+  animation: blinkingText 3s infinite;
+}
+
+/* for mobile */
+
+@media (max-width: 767px) {
+  .content {
+    width: 100%;
+  }
+  .content-title {
+    font-size: 22px;
+    line-height: 28px;
+    text-shadow: 0px 0px 0 rgb(14, 188, 0), 1px 1px 0 rgb(-8, 166, 0),
+      2px 2px 0 rgb(-31, 143, 0), 3px 3px 0 rgb(-53, 121, 0),
+      4px 4px 0 rgb(-75, 99, 0), 5px 5px 0 rgb(-97, 77, 0),
+      6px 6px 0 rgb(-120, 54, 0), 7px 7px 0 rgb(-142, 32, 0),
+      8px 8px 0 rgb(-164, 10, 0), 9px 9px 0 rgb(-186, -12, 0),
+      10px 10px 9px rgba(0, 0, 0, 0.29), 10px 10px 1px rgba(0, 0, 0, 0.5),
+      0px 0px 9px rgba(0, 0, 0, 0.2);
+  }
+  .description-item {
+    font-size: 16px;
+    line-height: 20px;
+  }
+  .description-item-title {
+    margin-right: 0;
+  }
+  .description-item::after {
+    left: 0;
+    right: unset;
+    top: calc(100% + 18px);
+  }
+  .description-item-icon {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    position: relative;
+  }
 }
